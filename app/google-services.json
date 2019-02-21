@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "826500969526",
+    "firebase_url": "https://arvoron-b25ac.firebaseio.com",
+    "project_id": "arvoron-b25ac",
+    "storage_bucket": "arvoron-b25ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826500969526:android:1de53357643f2cad",
+        "android_client_info": {
+          "package_name": "com.arvoron.scherpel.arvoron"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826500969526-ev4on0bprqv9iiljnhrvcjooe8jlhdr2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arvoron.scherpel.arvoron",
+            "certificate_hash": "0031d18ff1236cb3f23aa8fc6b384d16e8070a0c"
+          }
+        },
+        {
+          "client_id": "826500969526-v0mbs4bdluiar3a2cj47v7uogrvi3jhm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVNfVAqZeo4FbkruL89hGrwMrtF5Sw9Pw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826500969526-v0mbs4bdluiar3a2cj47v7uogrvi3jhm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -71,6 +71,7 @@
 
 
     <LinearLayout
+
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -79,7 +80,8 @@
         >
 
         <android.support.v7.widget.CardView
-            android:id="@+id/assistente"
+            android:outlineSpotShadowColor="#000"
+            android:id="@+id/cadastro"
             android:clickable="true"
             android:layout_width="160dp"
             android:layout_height="190dp"
@@ -90,12 +92,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-
                     android:padding="10dp"
                     android:src="@drawable/adote" />
 
@@ -110,7 +112,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="10dp"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="#AAA">
+
+                </View>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -123,7 +127,7 @@
 
 
         <android.support.v7.widget.CardView
-            android:id="@+id/projetos"
+            android:id="@+id/list"
             android:clickable="true"
             android:layout_width="160dp"
             android:layout_height="190dp"
@@ -137,7 +141,6 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-
                     android:padding="10dp"
                     android:src="@drawable/arvore"
 
@@ -153,7 +156,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="#AAA"
                     android:layout_margin="10dp"
                     >
                 </View>
@@ -177,7 +180,7 @@
         android:clipToPadding="false"
         >
         <android.support.v7.widget.CardView
-            android:id="@+id/cursos"
+            android:id="@+id/chat"
             android:clickable="true"
             android:layout_width="160dp"
             android:layout_height="190dp"
@@ -191,7 +194,6 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-
                     android:padding="10dp"
                     android:src="@drawable/relatar"
 
@@ -206,7 +208,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="#AAA"
                     android:layout_margin="10dp"
                     >
                 </View>
@@ -222,7 +224,7 @@
 
 
         <android.support.v7.widget.CardView
-            android:id="@+id/eventos"
+            android:id="@+id/map"
             android:clickable="true"
             android:layout_width="160dp"
             android:layout_height="190dp"
@@ -236,7 +238,6 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-
                     android:padding="10dp"
                     android:src="@drawable/mapa"
 
@@ -251,7 +252,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="#AAA"
                     android:layout_margin="10dp"
                     >
                 </View>

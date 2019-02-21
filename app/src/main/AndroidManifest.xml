@@ -11,9 +11,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Splash"></activity>
-        <activity android:name=".MenuPrincipal">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".List"></activity>
+        <activity android:name=".Catalog" />
+        <activity android:name=".MenuPrincipal" />
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
