@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "826500969526-t74f6lc79gp3ns88rrgvcthtrre1v2j5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arvoron.scherpel.arvoron",
+            "certificate_hash": "15563577edf70e761b0c8918569ffcbf9eae7a66"
+          }
+        },
+        {
           "client_id": "826500969526-v0mbs4bdluiar3a2cj47v7uogrvi3jhm.apps.googleusercontent.com",
           "client_type": 3
         }

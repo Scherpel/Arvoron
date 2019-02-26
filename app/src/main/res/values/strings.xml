@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Arvoron</string>
+    <string name="login_bigText">Welcome to Arvoron!</string>
+    <string name="login_smallText">Welcome to Arvoron!</string>
+    <string name="email_hint">Your email, please!</string>
+    <string name="password_hint">Now your password, please!</string>
+    <string name="login_button">All good! Show me Arvoron</string>
+    <string name="signup_button">Looking for an account to sign up? Click here!</string>
+
+    <string name="menu_item_search">Search</string>
+    <string name="menu_item_account">Account settings</string>
+    <string name="menu_item_logout">Logout</string>
+
+    <string name="register_bigText">Register on Arvoron!</string>
+    <string name="register_button">Create an Account</string>
+    <string name="register_button2">Already have an account?</string>
+    <string name="register_passwordConfirm_hint">Confirm your email, please!</string>
+    <string name="setup_name">Your name here!</string>
+    <string name="setup_button">Save changes</string>
+
 </resources>

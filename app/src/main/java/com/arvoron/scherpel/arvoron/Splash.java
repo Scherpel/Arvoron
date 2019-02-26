@@ -7,17 +7,21 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.FirebaseApp;
+
 public class Splash extends AppCompatActivity {
     private ImageView fonte;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        FirebaseApp.initializeApp(this);
+
         fonte = (ImageView) findViewById(R.id.fonte);
         Animation myanim = AnimationUtils.loadAnimation(this,R.anim.fadein);
         fonte.startAnimation(myanim);
 
-        final Intent i = new Intent(this, MenuPrincipal.class);
+        final Intent i = new Intent(this, SetupActivity.class);
         Thread timer = new Thread(){
             public void run(){
                 try{

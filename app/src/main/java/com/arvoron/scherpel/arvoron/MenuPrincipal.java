@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 
+import com.google.firebase.FirebaseApp;
+
 public class MenuPrincipal extends AppCompatActivity implements View.OnClickListener{
     Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
+
         setContentView(R.layout.activity_menu_principal);
         CardView treeCatalog= findViewById(R.id.cadastro);
         CardView treeList = findViewById(R.id.list);
