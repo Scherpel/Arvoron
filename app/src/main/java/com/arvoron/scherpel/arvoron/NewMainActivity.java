@@ -1,22 +1,36 @@
 package com.arvoron.scherpel.arvoron;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import static com.google.firebase.auth.FirebaseAuth.getInstance;
 
 public class NewMainActivity extends AppCompatActivity {
     private Toolbar mainToolBar;
     private FirebaseAuth mAuth;
+    private FloatingActionButton addPostBtn;
+    private FirebaseFirestore firebaseFirestore;
+    private String user_id;
+        private BottomNavigationView mainbottomNav;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +38,21 @@ public class NewMainActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         mAuth= FirebaseAuth.getInstance();
         FirebaseUser currentUser = getInstance().getCurrentUser();
-        mainToolBar = findViewById(R.id.toolbar);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        mainToolBar = findViewById(R.id.main_toolbar);
         setSupportActionBar(mainToolBar);
         getSupportActionBar().setTitle("Arvoron");
+        mainbottomNav = findViewById(R.id.mainBottomNav);
+        addPostBtn = findViewById(R.id.add_tree);
+        addPostBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newTree = new Intent(NewMainActivity.this, NewTreeActivity.class);
+                startActivity(newTree);
+                finish();
+            }
+        });
+
     }
 
     @Override
@@ -36,6 +62,26 @@ public class NewMainActivity extends AppCompatActivity {
 
         if (currentUser == null) {
             sendToLogin();
+        } else{
+            user_id = mAuth.getCurrentUser().getUid();
+            firebaseFirestore.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if(task.isSuccessful()){
+
+                        if(!task.getResult().exists()){
+                            Intent setupIntent = new Intent(NewMainActivity.this, SetupActivity.class);
+                            startActivity(setupIntent);
+                            finish();
+                        }
+
+                    } else{
+                        String errorMessage = task.getException().getMessage();
+                        Toast.makeText(NewMainActivity.this, "Error : " + errorMessage, Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            });
         }
     }
 
@@ -53,7 +99,10 @@ public class NewMainActivity extends AppCompatActivity {
                 logout();
 
                 return true;
-
+            case R.id.menu_item_account:
+                Intent goToAccount = new Intent(this, SetupActivity.class);
+                startActivity(goToAccount);
+                finish();
                 default:
                     return false;
         }

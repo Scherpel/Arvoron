@@ -17,5 +17,8 @@
     <string name="register_passwordConfirm_hint">Confirm your email, please!</string>
     <string name="setup_name">Your name here!</string>
     <string name="setup_button">Save changes</string>
+    <string name="tree_desc">Please add informations about this tree!</string>
+    <string name="tree_save_button" > Done! </string>
+    <string name="bottom_home_tree" />
 
 </resources>

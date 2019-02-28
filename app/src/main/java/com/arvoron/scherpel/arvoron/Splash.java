@@ -21,7 +21,7 @@ public class Splash extends AppCompatActivity {
         Animation myanim = AnimationUtils.loadAnimation(this,R.anim.fadein);
         fonte.startAnimation(myanim);
 
-        final Intent i = new Intent(this, SetupActivity.class);
+        final Intent i = new Intent(this, NewMainActivity.class);
         Thread timer = new Thread(){
             public void run(){
                 try{
