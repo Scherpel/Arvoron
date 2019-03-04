@@ -45,6 +45,9 @@ public class NewTreeActivity extends AppCompatActivity {
     private Toolbar newPostToolbar;
     private ImageView newPostImage;
     private EditText newPostDesc;
+    private EditText newPostName;
+    private EditText newPostFamily;
+    private EditText newPostLocation;
     private Button newPostButton;
     private Uri postImageUri = null;
     private ProgressBar newPostProgress;
@@ -69,13 +72,16 @@ public class NewTreeActivity extends AppCompatActivity {
         newPostDesc = findViewById(R.id.treeDesc);
         newPostButton = findViewById(R.id.treeButton);
         newPostProgress = findViewById(R.id.treeProgress);
+        newPostName = findViewById(R.id.treeName);
+        newPostFamily = findViewById(R.id.treeFamily);
+        newPostLocation = findViewById(R.id.treeLocation);
         newPostImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CropImage.activity()
                         .setGuidelines(CropImageView.Guidelines.ON)
                         .setAspectRatio(1, 1)
-                        .setMaxCropResultSize(512, 512)
+                        .setMaxCropResultSize(912, 912)
                         .start(NewTreeActivity.this);
             }
 
@@ -85,8 +91,11 @@ public class NewTreeActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             final String desc = newPostDesc.getText().toString();
+            final String name = newPostName.getText().toString();
+            final String family = newPostFamily.getText().toString();
+            final String location = newPostLocation.getText().toString();
 
-            if(!TextUtils.isEmpty(desc) && postImageUri != null){
+            if(!TextUtils.isEmpty(name) && postImageUri != null){
 
                 newPostProgress.setVisibility(View.VISIBLE);
                 final String randomName = UUID.randomUUID().toString();
@@ -99,8 +108,8 @@ public class NewTreeActivity extends AppCompatActivity {
                             File newImageFile = new File(postImageUri.getPath());
                             try {
                                 compressedImageFile = new Compressor(NewTreeActivity.this)
-                                        .setMaxHeight(100)
-                                        .setMaxWidth(100)
+                                        .setMaxHeight(200)
+                                        .setMaxWidth(200)
                                         .setQuality(1)
                                         .compressToBitmap(newImageFile);
                             } catch (IOException e) {
@@ -118,6 +127,9 @@ public class NewTreeActivity extends AppCompatActivity {
                                     Map<String, Object> postMap = new HashMap<>();
                                     postMap.put("image_url", downloadUri);
                                     postMap.put("thumb_url", downloadThumbFromUri);
+                                    postMap.put("name", name);
+                                    postMap.put("family", family);
+                                    postMap.put("location", location);
                                     postMap.put("desc", desc);
                                     postMap.put("user_id", current_user_id);
                                     postMap.put("timestamp", FieldValue.serverTimestamp());
